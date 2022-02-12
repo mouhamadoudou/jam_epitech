@@ -5,9 +5,9 @@
 ## Makefile
 ##
 
-SRC	=	$(window.cpp)
+SRC	=	window.cpp		\
 
-OBJ	=	$(SRC:.cpp=.o)
+OBJ	=	*.o
 
 NAME	=	jam
 

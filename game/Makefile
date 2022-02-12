@@ -1,24 +1,33 @@
 ##
-## EPITECH PROJECT, 2022
+## EPITECH PROJECT, 2020
 ## Makefile
 ## File description:
-## Makefile
+## amine ch
 ##
 
-SRC	=	window.cpp		\
+SRC     =	src/main.c		\
 
-OBJ	=	*.o
+OBJ     =	*.o
 
-NAME	=	jam
+INCLUDE =	include/
 
-all:$(NAME)
+NAME    =	jam
 
-$(NAME):	$(OBJ)
-	g++	-o $(NAME) $(OBJ) -lsfml-graphics -lsfml-window -lsfml-system
+all:
+	gcc -c -I $(INCLUDE) $(SRC)
+	gcc -o $(NAME) $(OBJ) -lcsfml-graphics -lcsfml-window -lcsfml-audio -lcsfml-system
 
 clean:
 	rm -f $(OBJ)
 
-fclean:	clean
+fclean: clean
+	rm -f $(NAME)
+	rm -f $(OBJ)
+	rm -f *~
+	rm -f *#
+	rm -f src/*~
+	rm -f src/*#
 
-re:	fclean all
+re: fclean all
+
+.PHONY: re clean fclean all

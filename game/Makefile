@@ -2,32 +2,37 @@
 ## EPITECH PROJECT, 2020
 ## Makefile
 ## File description:
-## amine ch
+## JAM
 ##
 
-SRC     =	src/main.c		\
+SRC	=		src/main.c					\
+			src/position_vec.c			\
+			src/position_texture.c 		\
+			src/shifting.c				\
+			src/function_second_vec.c	\
+			src/hyphen.c				\
+			src/my_putchar.c			\
+			src/sprite.c				\
+			src/life.c					\
+			src/game2.c					\
+			src/convert.c				\
 
-OBJ     =	*.o
+OBJ	=	*.o
 
-INCLUDE =	include/
+INCLUDE	=	include/
 
-NAME    =	jam
+NAME	=	jam_epitech
 
 all:
-	gcc -c -I $(INCLUDE) $(SRC)
-	gcc -o $(NAME) $(OBJ) -lcsfml-graphics -lcsfml-window -lcsfml-audio -lcsfml-system
+	cc -g3 -c -I $(INCLUDE) $(SRC)
+	cc -g3 -o $(NAME) $(OBJ) -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -I./
 
 clean:
 	rm -f $(OBJ)
 
-fclean: clean
+fclean:	clean
 	rm -f $(NAME)
-	rm -f $(OBJ)
-	rm -f *~
-	rm -f *#
-	rm -f src/*~
-	rm -f src/*#
 
-re: fclean all
+re:	fclean all
 
-.PHONY: re clean fclean all
+.PHONY:	all clean fclean re

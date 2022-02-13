@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** game.h
 ** File description:
-** my_hunter
+** JAM
 */
 
 #ifndef GAME_H_
@@ -47,6 +47,7 @@ typedef struct param_t {
     sfTexture *t_life4;
     sfTexture *t_life5;
     sfTexture *t_GM;
+    sfTexture *succes;
     sfSprite *s_butonplay1;
     sfSprite *s_forest1;
     sfSprite *s_bird;
@@ -63,6 +64,7 @@ typedef struct param_t {
     sfSprite *s_life4;
     sfSprite *s_life5;
     sfSprite *s_GM;
+    sfSprite *succe;
     sfVector2i mouse;
     sfClock *clock_png;
     sfMusic *music;
@@ -82,6 +84,7 @@ typedef struct param_t {
     sfVector2f v_life4;
     sfVector2f v_life5;
     sfVector2f v_GM;
+    sfVector2f v_win;
     sfEvent event;
     sfIntRect rect_jpg;
     sfVideoMode mode;
@@ -117,5 +120,11 @@ param game2(param pos, sfEvent event);
 param score(param *se);
 char *convert(int nb);
 param init(param *t);
+void pos_texture_success(param *pos_t);
+void draw_sprite_success(param *d_s);
+void texture_create_success(param *t_c);
+void sprite_create_success(param *s_c);
+param game3(param pos, sfEvent event);
+
 
 #endif

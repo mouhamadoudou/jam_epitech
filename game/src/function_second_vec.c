@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** function_second_vec.c
 ** File description:
-** hunter
+** JAM
 */
 
 #include "game.h"

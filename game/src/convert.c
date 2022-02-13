@@ -15,19 +15,27 @@ param init(param *t)
 
 char *convert(int nb)
 {
+    //  long sec = 120;
+    //  while (sec > 0)
+    //  {
+    //      sec--;
+    //      sleep(1000);
+    //  }
+    //  return sec;
     int s = 0;
     int i = nb;
     int j = 0;
-    char *str = malloc(sizeof(char) * (s+j+1));
+    char *str = malloc(sizeof(char) * (s + j + 1));
 
-    while (i) {
+    while (i)
+    {
         i = i / 10;
         s++;
     }
-    for (i = s+j-1 ; i >= j ; i--, nb = nb /10)
+    for (i = s + j - 1; i >= j; i--, nb = nb / 10)
         str[i] = nb % 10 + 48;
-    str[s+j] = '\0';
-
+    str[s + j] = '\0';
+    printf(str);
     return str;
 }
 
@@ -39,10 +47,12 @@ param score(param *se)
     se->text = sfText_create();
 
     se->text = sfText_create();
-
-    se->count = se->count + 5;
-    if (se->count > 4198992)
-        se->count = 0;
+    se->count = se->count + 1;
+    
+    if (se->count >= 500) {
+        sfRenderWindow_drawSprite(se->window, se->succe, NULL);
+        se->game = 3;
+    }
 
     sfText_setPosition(se->text, se->v_text);
     sfText_setFont(se->text, se->font);

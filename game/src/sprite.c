@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** main.c
 ** File description:
-** hunter
+** JAM
 */
 
 #include "game.h"
@@ -31,7 +31,7 @@ param mouse_press(param pos, sfEvent event)
     if (event.type == sfEvtMouseMoved) {
         pos.v_aim.x = event.mouseMove.x - 100;
         pos.v_aim.y = event.mouseMove.y - 88;
-        sfSprite_setPosition(pos.s_aim, pos.v_aim);
+        sfSprite_setPosition(pos.s_bird1, pos.v_bird1);
     }
 }
 
@@ -43,10 +43,13 @@ param get_pos(param pos)
     pos_vec(&pos);
     pos_vec1(&pos);
     texture_create(&pos);
+    // texture_create_success(&pos);
     sprite_create(&pos);
+    // sprite_create_success(&pos);
     pos_texture(&pos);
+    // pos_texture_success(&pos);
     pos_sprite(&pos);
-    music_play(&pos);
+   // music_play(&pos);
     return pos;
 }
 
@@ -54,6 +57,8 @@ param draw_pos(param pos, sfEvent event)
 {
     draw_sprite(&pos);
     live(&pos);
+    //draw_sprite_success(&pos);
+
     movement_sprite2(&pos, event);
     movement_sprite3(&pos, event);
     //score(&pos);
@@ -79,9 +84,9 @@ int okay(int ac, char **av)
             score(&pos);
             movement_sprite(&pos);
             live(&pos);
-            
         }
         game2(pos, event);
+        game3(pos, event);
         sfRenderWindow_display(pos.window);
     }
     destroy_all(&pos);

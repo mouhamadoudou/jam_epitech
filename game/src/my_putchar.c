@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** my_putchar.c
 ** File description:
-** my_hunter
+** JAM
 */
 
 #include "game.h"

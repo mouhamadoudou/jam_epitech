@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** shifting.c
 ** File description:
-** hunter
+** JAM
 */
 
 #include "game.h"
@@ -44,5 +44,4 @@ void destroy_all(param *dest)
     sfTexture_destroy(dest->t_bird2);
     sfTexture_destroy(dest->t_bird1);
     sfMusic_destroy(dest->music);
-    sfRenderWindow_destroy(dest->window);
 }
